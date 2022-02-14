@@ -1,0 +1,42 @@
+{
+  "name": "@botocrat/core",
+  "version": "0.1.0",
+  "description": "Express-like Telegram Bot Framework",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+   "keywords": [
+    "botocrat",
+    "telegram",
+    "bot",
+    "framework",
+    "nodejs",
+    "context-oriented-programming",
+    "chatbot"
+  ],
+  "author": "Alper Kursat Unver",
+  "license": "MIT",
+  "peerDependencies": {
+    "@botocrat/telegram": "^0.2.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/botocrats/botocrat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/botocrats/botocrat/issues"
+  },
+  "homepage": "https://github.com/botocrats/botocrat/wiki"
+}

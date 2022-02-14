@@ -1,0 +1,12 @@
+Telegram Client
+interface: IT...
+type: TT...Type
+
+Botocrat Core
+interface: IBot...
+type: TBot...Type
+
+Botocrat Objects
+UCfirst camel case object names
+ex: Photo Voice VideoNote etc.
+
