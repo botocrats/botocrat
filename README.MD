@@ -7,17 +7,16 @@
 [![license mit][license-image]][github-url]
 ![vulnerabilities][vulnerabilities-image]
 
-![Botocrat animation](https://user-images.githubusercontent.com/17167342/153958213-f187f568-47c2-4b49-b15d-17730b184d32.gif)
+![Botocrat animation][animation-url]
 
 Botocrat is a minimal and flexible Telegram bot framework that provides `context oriented programming` API along with express-like middlewares.
 
-Main package is served under `@botocrat/core` (this package).
 
-Also has following packages you can use or replace with your own.
+Botocrat has following packages you can use or replace with your own.
 
 | Package | |
 |-|-|
-| [@botocrat/telegram][client-pkg] | Solid Telegram Client |
+| [@botocrat/telegram][client-pkg] | Telegram Bot Client |
 | [@botocrat/poller][poller-pkg] | Polls Telegram server to .getUpdates() |
 | [@botocrat/express][express-pkg] | Express middleware to receive updates from webhook |
 
@@ -25,24 +24,26 @@ Also has following packages you can use or replace with your own.
 
 - [Context Oriented][context-wiki] Approach
 - Flexible ( You can [create & share middlewares][middleware-wiki] )
-- Light-weight & low-overhead
+- [Lightest][size-comparison] & low-overhead
+- Typescript Support
 
-## Quick Start
+## Quick Start (manual)
 
 ```bash
 npm i @botocrat/core @botocrat/telegram @botocrat/poller --save
 ```
 
 ```typescript
-import Botocrat from "@botocrat/core"
-import createClient from "@botocrat/telegram"
-import poller from "@botocrat/poller"
+import Botocrat from '@botocrat/core'
+import createClient from '@botocrat/telegram'
+import poller from '@botocrat/poller'
 
 const client = createClient({token: TELEGRAM_BOT_TOKEN})
 
 const bot = new Botocrat()
-  .get("message", (req, res) => 
-    res.reply("Hello " + req.from.first_name))
+  .get('message', (req, res) => {
+    res.reply(`Hello ${req.from.first_name}!`)
+  })
 
 poller(bot, client).poll()
 
@@ -64,7 +65,7 @@ MIT License
 [express-pkg]: https://npmjs.com/@botocrat/express
 
 [license-image]: https://img.shields.io/github/license/botocrats/botocrat?style=flat-square
-[size-image]: https://img.shields.io/bundlephobia/minzip/@botocrat/core?style=flat-square
+[size-image]: https://img.shields.io/bundlephobia/min/@botocrat/core?style=flat-square
 [nodejs-image]: https://img.shields.io/badge/library-NodeJS-darkgreen.svg?style=flat-square
 [npm-image]: https://img.shields.io/npm/v/@botocrat/core.svg?style=flat-square
 [lastcommit-image]: https://img.shields.io/github/last-commit/botocrats/botocrat?style=flat-square
@@ -72,3 +73,5 @@ MIT License
 
 [npm-url]: https://npmjs.org/package/@botocrat/core
 [github-url]: https://github.com/botocrats/botocrat
+[size-comparison]: https://packagephobia.com/result?p=%40botocrat%2Fcore%2Ctelegraf%2Cnode-telegram-bot-api%2Cslimbot%2Ctelebot
+[animation-url]: https://user-images.githubusercontent.com/17167342/154324948-8df5edf2-7216-41b9-889b-5b025ddf89a8.gif

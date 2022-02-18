@@ -1,9 +1,9 @@
 {
   "name": "@botocrat/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Express-like Telegram Bot Framework",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
+  "main": "./src/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
     "test": "npm run lint",
     "lint": "eslint"
@@ -12,7 +12,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-   "keywords": [
+  "keywords": [
     "botocrat",
     "telegram",
     "bot",
@@ -24,7 +24,7 @@
   "author": "Alper Kursat Unver",
   "license": "MIT",
   "peerDependencies": {
-    "@botocrat/telegram": "^0.2.5"
+    "@botocrat/telegram": "^0.2.7"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.12.0",

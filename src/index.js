@@ -1,8 +1,7 @@
 'use strict'
 const {createContext, createServiceMessageContext} = require('./utils/context')
 const Middleware = require('./Middleware')
-const {endpointNotFound} = require("./utils")
-const isServiceMessage = require("./utils/serviceMessage")
+const isServiceMessage = require('./utils/serviceMessage')
 module.exports = class Botocrat extends Middleware {
   endpoints = {}
   serviceMessage = {}
@@ -16,21 +15,18 @@ module.exports = class Botocrat extends Middleware {
   }
   _processUpdate(update, client) {
     const [endpointType, req] = Object.entries(update)[0]
-    const serviceMessageType = isServiceMessage(req)
+    const serviceMessageType = endpointType === "message" && isServiceMessage(req);
     let res, callback
     if (serviceMessageType) {
+      res = createServiceMessageContext(client, serviceMessageType, req)
       return super._processUpdate(
-        req,
-        createServiceMessageContext(client, serviceMessageType, req),
-        () => this.serviceMessage[serviceMessageType] && this.serviceMessage[serviceMessageType](req, res)
-      );
+        req, res,
+        () => this.serviceMessage[serviceMessageType] && this.serviceMessage[serviceMessageType](req, res))
     }
-
+    res = createContext(client, endpointType, req)
     return super._processUpdate(
-      req,
-      createContext(client, endpointType, req),
-      () => this.endpoints[endpointType] && this.endpoints[endpointType](req, res)
-    )
+      req, res,
+      () => this.endpoints[endpointType] && this.endpoints[endpointType](req, res))
   }
 }
 module.exports.Commands = require('./utils/commands')

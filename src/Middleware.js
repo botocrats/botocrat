@@ -1,4 +1,4 @@
-const { createChain } = require('./utils')
+const { createChain } = require('./utils/chain')
 
 module.exports = class Middleware {
   _middlewares = [];
