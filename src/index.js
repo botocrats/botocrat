@@ -16,7 +16,7 @@ module.exports = class Botocrat extends Middleware {
   _processUpdate(update, client) {
     const [endpointType, req] = Object.entries(update)[0]
     const serviceMessageType = endpointType === "message" && isServiceMessage(req);
-    let res, callback
+    let res
     if (serviceMessageType) {
       res = createServiceMessageContext(client, serviceMessageType, req)
       return super._processUpdate(
