@@ -1,7 +1,7 @@
 {
   "name": "@botocrat/core",
-  "version": "0.1.1",
-  "description": "Express-like Telegram Bot Framework",
+  "version": "0.2.0",
+  "description": "Context oriented Telegram Bot Framework",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",
   "scripts": {
@@ -24,7 +24,7 @@
   "author": "Alper Kursat Unver",
   "license": "MIT",
   "peerDependencies": {
-    "@botocrat/telegram": "^0.2.7"
+    "@botocrat/telegram": "^0.2.8"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.12.0",

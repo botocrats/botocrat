@@ -18,9 +18,9 @@ const isCommand = (availableCommands, username) =>
 module.exports = (commands) => {
   const getCommand = isCommand(Object.keys(commands))
   return (req, res, next) => {
-    if(res.type !== "message") return next()
+    if (res.type !== "message") return next()
     const cmd = getCommand(req);
-    if(!cmd) return next()
-    commands[cmd](req, res)
+    if (!cmd) return next()
+    return commands[cmd](req, res)
   }
 }
