@@ -6,7 +6,8 @@
 [![last commit][lastcommit-image]][github-url]
 [![license mit][license-image]][github-url]
 ![vulnerabilities][vulnerabilities-image]
-[![Total alerts][lgtm-image]][lgtm-url]
+[![Total alerts][alerts-image]][alerts-url]
+[![Code quality][quality-image]][quality-url]
 
 ![Botocrat animation][animation-url]
 
@@ -27,6 +28,12 @@ Botocrat has following packages you can use or replace with your own.
 - Flexible ( You can [create & share middlewares][middleware-wiki] )
 - [Lightest][size-comparison] & low-overhead
 - Typescript Support
+
+## Quick Start (cli)
+
+```bash
+npm exec botocrat my-telegram-bot
+```
 
 ## Quick Start (manual)
 
@@ -76,5 +83,7 @@ MIT License
 [github-url]: https://github.com/botocrats/botocrat
 [size-comparison]: https://packagephobia.com/result?p=%40botocrat%2Fcore%2Ctelegraf%2Cnode-telegram-bot-api%2Cslimbot%2Ctelebot
 [animation-url]: https://user-images.githubusercontent.com/17167342/154324948-8df5edf2-7216-41b9-889b-5b025ddf89a8.gif
-[lgtm-url]: https://lgtm.com/projects/g/botocrats/botocrat/alerts/
-[lgtm-image]: https://img.shields.io/lgtm/alerts/g/botocrats/botocrat.svg?logo=lgtm&logoWidth=18
+[alerts-url]: https://lgtm.com/projects/g/botocrats/botocrat/alerts/
+[alerts-image]: https://img.shields.io/lgtm/alerts/g/botocrats/botocrat.svg?logo=lgtm&logoWidth=18
+[quality-image]: https://img.shields.io/lgtm/grade/javascript/g/botocrats/botocrat.svg?logo=lgtm&logoWidth=18
+[quality-url]: https://lgtm.com/projects/g/botocrats/botocrat/context:javascript

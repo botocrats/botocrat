@@ -1,17 +1,20 @@
 module.exports.createChain = (middlewareList) => {
   let len = middlewareList.length
-  if(len === 0){throw Error("no middleware")}
-  return (...args) => new Promise((resolve, reject) => {
-    const process = (i) => {
-      if (i === len) return resolve()
-
-      try {
-        middlewareList[i](...args, () => process(i+1))
-      }
-      catch (e) {
-        reject(e)
-      }
+  const execute = (fn, args, cb) => {
+    try {
+      fn(...args, cb)
     }
-    process(0)
-  })
+    catch (e) {
+      console.error(error, "Error while running middleware", fn.toString())
+    }
+  }
+  return len === 0
+    ? (req, res, next) => next && next()
+    : (req, res, next) => {
+      const process = (index = 0) =>
+        (index === len)
+          ? next && next()
+          : execute(middlewareList[index], [req, res], () => process(index + 1))
+      process()
+    }
 }
