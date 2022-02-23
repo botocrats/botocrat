@@ -1,6 +1,6 @@
 {
   "name": "@botocrat/core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Context oriented Telegram Bot Framework",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",
