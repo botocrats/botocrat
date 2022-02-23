@@ -63,10 +63,16 @@ poller(bot, client).poll()
 
 Read the detailed documentation on [GitHub Wiki][github-wiki]
 
+
+## Aq
+
+You can ask questions on [GitHub][aq-link]
+
 ## License
 
 MIT License
 
+[aq-link]: https://github.com/botocrats/botocrat/discussions/new?category=q-a
 [wait-wiki]: https://github.com/botocrats/botocrat/wiki/Response-Context-Decorators
 [middleware-wiki]: https://github.com/botocrats/botocrat/wiki/Middlewares
 [context-wiki]: https://github.com/botocrats/botocrat/wiki/Message-Context
