@@ -5,7 +5,7 @@ module.exports.createChain = (middlewareList) => {
       fn(...args, cb)
     }
     catch (e) {
-      console.error(error, "Error while running middleware", fn.toString())
+      console.error(`Error while running middleware ${fn.name}:\n`, e)
     }
   }
   return len === 0

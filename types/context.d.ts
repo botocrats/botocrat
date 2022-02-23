@@ -17,7 +17,9 @@ export type IBotResponseContext<T extends keyof ITUpdate, Ctx = {}, Discard={} ,
   client: ITelegramClient
   type: T
   to: (chat_id: TTChatIdType) => IBotResponseContext<T, Ctx, Discard, Omit<SendParams, "chat_id">>
-  silent: IBotResponseContext<T, Ctx, Discard & {silent: any}, Omit<SendParams, "disable_notification">>
+  wait: (ms: number) => IBotResponseContext<T, Ctx, Discard, SendParams>
+  silent: IBotResponseContext<T, Ctx, Discard & { silent: any }, Omit<SendParams, "disable_notification">>
+  allow: IBotResponseContext<T, Ctx, Discard & {allow: any}, Omit<SendParams, "allow_sending_without_reply">>
   protect: IBotResponseContext<T, Ctx, Discard & {protect: any}, Omit<SendParams, "protect_content">>
   copy: (params: Omit<ITCopyMessageParams, keyof BaseSentParameters | "from_chat_id" | "message_id" | "chat_id"> & SendParams & keyof ITUpdate[T] extends "message_id" ? {} : {message_id:number}) =>
     IBotResponseContext<T, { copied: IBotResponseContext<"message", SentContext> }, Discard, SendParams>

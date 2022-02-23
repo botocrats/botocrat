@@ -13,7 +13,6 @@
 
 Botocrat is a minimal and flexible Telegram bot framework that provides `context oriented programming` API along with express-like middlewares.
 
-
 Botocrat has following packages you can use or replace with your own.
 
 | Package | |
@@ -21,6 +20,7 @@ Botocrat has following packages you can use or replace with your own.
 | [@botocrat/telegram][client-pkg] | Telegram Bot Client |
 | [@botocrat/poller][poller-pkg] | Polls Telegram server to .getUpdates() |
 | [@botocrat/express][express-pkg] | Express middleware to receive updates from webhook |
+| @botocrat/state | Persistent/volatile state (stored in redis) management middleware (_coming soon_) |
 
 ## Features
 
@@ -28,6 +28,7 @@ Botocrat has following packages you can use or replace with your own.
 - Flexible ( You can [create & share middlewares][middleware-wiki] )
 - [Lightest][size-comparison] & low-overhead
 - Typescript Support
+- Consecutive [sending, chaining and waiting][wait-wiki]
 
 ## Quick Start (cli)
 
@@ -50,7 +51,8 @@ const client = createClient({token: TELEGRAM_BOT_TOKEN})
 
 const bot = new Botocrat()
   .get('message', (req, res) => {
-    res.reply(`Hello ${req.from.first_name}!`)
+    res.send(`Hello ${req.from.first_name}!`)
+    // .sent.wait(1000).reply('Thank you for choosing us')
   })
 
 poller(bot, client).poll()
@@ -65,6 +67,7 @@ Read the detailed documentation on [GitHub Wiki][github-wiki]
 
 MIT License
 
+[wait-wiki]: https://github.com/botocrats/botocrat/wiki/Response-Context-Decorators
 [middleware-wiki]: https://github.com/botocrats/botocrat/wiki/Middlewares
 [context-wiki]: https://github.com/botocrats/botocrat/wiki/Message-Context
 [github-wiki]: https://github.com/botocrats/botocrat/wiki
