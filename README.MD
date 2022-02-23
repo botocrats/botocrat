@@ -2,7 +2,6 @@
 
 [![NodeJS][nodejs-image]][npm-url]
 [![npm][npm-image]][npm-url]
-[![size][size-image]][npm-url]
 [![last commit][lastcommit-image]][github-url]
 [![license mit][license-image]][github-url]
 ![vulnerabilities][vulnerabilities-image]
