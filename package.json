@@ -27,7 +27,7 @@
     "@botocrat/telegram": "^0.2.8"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.9.0"
   },
