@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.12.1",
-    "@typescript-eslint/parser": "^5.12.1",
+    "@typescript-eslint/parser": "^5.24.0",
     "eslint": "^8.9.0"
   },
   "repository": {
